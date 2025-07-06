@@ -1,0 +1,700 @@
+/* ==============================
+   NAVBAR ESTILOS GENERALES
+   ============================== */
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 46px; /* Navbar colapsado */
+  background-color: #d4edfc;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* transition: width 0.3s ease-in-out; */
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  overflow: hidden;
+  z-index: 0;
+  border-radius: 0 20px 20px 0;
+}
+
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 46px; /* Navbar colapsado */
+
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 6;
+
+  /* 🎨 Parte curva blanca */
+}
+
+.navbar.expanded::-webkit-scrollbar {
+  display: none; /* Oculta la barra de scroll en Chrome y Safari */
+}
+
+.navbar.expanded {
+  width: 250px;
+  overflow-y: auto;
+  scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
+  -ms-overflow-style: none; /* Oculta la barra de scroll en IE y Edge */
+}
+
+.navbar.closing {
+  width: 46px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* ==============================
+   LISTA DE NAVEGACIÓN
+   ============================== */
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 6px 0;
+}
+
+/* Estilos base para los enlaces (Search, Listings, Services, etc.) */
+.navbar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  padding: 12px 0;
+  text-decoration: none;
+  color: #3f6db4;
+  transition: background 0s ease-in-out;
+  border-radius: 10px;
+}
+
+/* En estado expandido, se alinean a la izquierda */
+.navbar.expanded a {
+  justify-content: flex-start;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.navbar.expanded a.active {
+  background-color: black;
+  color: white;
+}
+.navbar.expanded a.active .icon {
+  background-color: white;
+}
+
+/* Oculta el texto cuando está colapsado */
+.navbar a span {
+  font-size: 14px;
+  display: none;
+}
+.navbar.expanded a span {
+  display: inline;
+}
+
+/* ==============================
+   BOTÓN DE TOGGLE (Abrir/Cerrar)
+   ============================== */
+.toggleBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.toggleBtn img {
+  width: 30px;
+  height: 30px;
+}
+
+.navbar.expanded .toggleBtn {
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.navbar.expanded .toggleBtn img {
+  width: 75px;
+  height: 25px;
+  display: flex;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+.navBarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+/* ==============================
+   BOTÓN DE CIERRE (X)
+   ============================== */
+.closeBtn {
+  background-color: #c8e4fc;
+  border: none;
+  color: black;
+
+  width: 35px;
+  height: 40px;
+  border-radius: 15px;
+  position: absolute;
+  cursor: pointer;
+  margin-left: 80%;
+  margin-top: -5%;
+  transition: background 0.3s ease-in-out;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.closeBtn:hover {
+  background-color: #9bc0e0;
+}
+
+/* ==============================
+   OVERLAY (Fondo borroso al abrir menú)
+   ============================== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(63, 109, 180, 0.33);
+  z-index: 5;
+  transition: opacity 3s ease;
+}
+
+/* ==============================
+   ÍCONOS DE MENÚ
+   ============================== */
+.icon {
+  width: 20px;
+  height: 20px;
+  background-color: #3f6db4;
+  -webkit-mask-image: var(--icon-url);
+  mask-image: var(--icon-url);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: cover;
+  transition: background-color 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  margin-top: 1px;
+}
+
+.iconCatalog {
+  content: "";
+  mask: url("../../../assets/NavBar/catalog.svg");
+  mask-repeat: no-repeat;
+}
+
+.iconSearch {
+  content: "";
+  mask: url("../../../assets/NavBar/search.svg");
+  mask-repeat: no-repeat;
+}
+
+.iconListings {
+  content: "";
+  mask: url("../../../assets/NavBar/listings.svg");
+  mask-repeat: no-repeat;
+}
+
+.iconMarketAbsorption {
+  content: "";
+  mask: url("../../../assets/NavBar/marketAbsortion.svg");
+  mask-repeat: no-repeat;
+}
+
+.iconDropdown {
+  content: "";
+  mask: url("../../../assets/components/dropdown2.svg");
+  mask-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+}
+
+.iconWorld {
+  content: "";
+  mask: url("../../../assets/NavBar/world.svg");
+  mask-repeat: no-repeat;
+  z-index: 10;
+}
+
+.iconAI {
+  content: "";
+  mask: url("../../../assets/NavBar/ai.svg");
+  mask-repeat: no-repeat;
+  z-index: 10;
+}
+
+/* Al hacer hover, cambia el ícono a negro */
+.navbar a:hover .icon,
+.navbar a.active .icon {
+  background-color: black;
+}
+
+.navbar a:hover .icon,
+.navbar a.active .icon {
+  background-color: black;
+}
+
+.navbar.expanded .dropi:hover .icon {
+  background-color: black;
+}
+
+/* 🎯 Hover en colapsado: mantener negro */
+.navbar:not(.expanded) .dropi:hover .icon {
+  background-color: black;
+}
+
+/* 🎯 Cuando esté expandido y activo: ícono blanco */
+.navbar.expanded .dropi.active:hover .icon {
+  background-color: white;
+}
+
+.navbar:not(.expanded) .icon {
+  margin-right: 0px;
+  margin-left: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Borde opcional en el hover de los enlaces principales */
+.navbar.expanded a:hover {
+  outline: 1px solid #3f6db4;
+}
+
+/* ==============================
+   MENU COLAPSABLE (SUBMENÚ: Catalog)
+   ============================== */
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .dropi: botón de "Catalog" con estilos iguales a .navbar a */
+.dropi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  padding: 12px 0;
+  text-decoration: none;
+  color: #3f6db4;
+  border-radius: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 0; /* Sin margen en estado colapsado */
+}
+
+/* En estado expandido, se alinea a la izquierda */
+.navbar.expanded .dropi {
+  justify-content: flex-start;
+  padding-left: 20px;
+  text-align: left;
+}
+
+/* Hover para "Catalog" en expandido */
+.navbar.expanded .dropi:hover {
+  outline: 1px solid #3f6db4;
+}
+
+/* Ajusta el espaciado del ícono en "Catalog" */
+.dropi .icon {
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+/* Oculta el texto "Catalog" cuando está colapsado */
+.navbar:not(.expanded) .dropi span {
+  display: none;
+}
+
+/* Flecha que gira al abrir el submenú */
+.arrow {
+  margin-left: auto;
+  transition: transform 0.3s ease-in-out;
+}
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+/* ==============================
+   ESTILOS DEL SUBMENÚ (SIN BORDE)
+   ============================== */
+.submenu {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+
+  border-radius: 8px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+
+  border: none;
+  outline: none;
+}
+
+.submenu.open {
+  max-height: none;
+}
+
+.submenu li {
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: black;
+  width: 80%;
+}
+
+.submenu li a {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Solo los NO activos son azules */
+.submenu li a:not(.activeSubmenu) {
+  color: #3f6db4;
+}
+
+/* Activos son fondo negro, texto blanco */
+.submenu li a.activeSubmenu {
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+}
+
+/* Hover solo para los inactivos */
+.submenu li a:not(.activeSubmenu):hover {
+  color: black;
+  outline: none;
+}
+
+/* ==============================
+   ESTILOS ESPECIALES PARA "CATALOG" ACTIVADO
+   (Cuando el submenu está desplegado)
+   ============================== */
+.activeCatalog {
+  background-color: black;
+  color: white;
+}
+.activeCatalog .icon {
+  background-color: white;
+}
+
+/* ==============================
+   AJUSTES FINALES PARA ESTADO COLAPSADO
+   ============================== */
+.navbar:not(.expanded) a,
+.navbar:not(.expanded) .dropi {
+  justify-content: center;
+}
+.navbar:not(.expanded) .dropi {
+  width: 40px; /* 🎯 Igual que los enlaces normales */
+  height: 40px;
+  padding: 0px 6px 0px 0px; /* Igual que los <a> */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px 0 0 20px;
+}
+
+.navbar:not(.expanded) .dropi {
+  margin-left: 7px;
+}
+
+.navbar.expanded .dropi {
+  margin-left: 7%;
+}
+
+/* Para centrar los iconos en estado colapsado */
+.navbar:not(.expanded) .icon {
+  margin-right: 0;
+}
+
+.dropdownImg {
+  margin-left: 12px;
+}
+/* Cuando el catálogo está abierto, la flecha se vuelve blanca */
+.activeCatalog .dropdownImg {
+  filter: brightness(0) invert(1); /* Convierte la imagen a blanco */
+}
+
+/* Mantener el icono blanco incluso en hover cuando está activo */
+.navbar.expanded .dropi.activeCatalog:hover .icon {
+  background-color: white !important;
+  filter: brightness(0) invert(1);
+}
+
+.iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Asegura que el icono esté encima */
+.iconWrapper .icon {
+  z-index: 2;
+}
+
+.collapseToggleButton {
+  width: 35px;
+  height: 40px;
+  border: none;
+  border-radius: 15px;
+  background: #c2e0f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+}
+
+.collapseToggleButton:hover {
+  background-color: #9bc0e0;
+}
+
+.arrowIcon {
+  font-size: 27px;
+  color: #3f6db4;
+  line-height: 1;
+  display: block; /* ✅ asegura que no cause desalineación como flex puede hacerlo */
+  text-align: center;
+}
+
+.arrowIconLeft {
+  font-size: 22px;
+  color: #3f6db4;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar:not(.expanded) .dropi.activeCatalog .iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Igual que a.active */
+}
+
+.navbar:not(.expanded) .dropi.activeCatalog .icon {
+  background-color: black;
+  padding-left: 0px; /* 🔥 Más espacio entre borde izquierdo e ícono */
+  margin-left: 0px;
+}
+
+.navbar:not(.expanded) .dropi {
+  justify-content: flex-start; /* 🔥 No solo cuando está activo */
+  padding-left: 3px; /* 🔥 Para que no quede pegadísimo */
+}
+/* 🎯 Estilos para submenú activo */
+.activeSubmenu {
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.highlight {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  background: white;
+  border-radius: 23px 0 0 23px;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+
+.highlight::before,
+.highlight::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  background: transparent;
+  
+}
+
+.navbar:not(.expanded) .highlight {
+    opacity: 1;  /* aquí arranca el fade-in, pero 0.7s después */
+  }
+
+.highlight::before {
+  bottom: 100%;
+  border-bottom-right-radius: 40px;
+  box-shadow: 5px 5px 0 2px #ffffff;
+}
+
+.highlight::after {
+  top: 100%;
+  border-top-right-radius: 40px;
+  box-shadow: 5px -5px 0 2px #ffffff;
+}
+
+/* al final de NavBar.module.css */
+.mobileHamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Oculta el sidebar */
+
+  .navbar {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px !important;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 5;
+  }
+
+  /* Abrir: slide-in */
+  .navbar.expanded {
+    transform: translateX(0);
+  }
+
+  /* Cerrar: slide-out */
+  .navbar.closing {
+    transform: translateX(-100%);
+  }
+
+  /* Muestra el botón de hamburguesa */
+  .mobileHamburger {
+    display: flex;
+    position: fixed;
+    top: 12px;
+    left: 10px;
+    z-index: 5;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 8px;
+    display: inline-flex; /* O inline-block/inline-grid según tu caso */
+    width: fit-content; /* auto en versiones antiguas: width: auto; */
+    height: fit-content;
+  }
+  .mobileHamburger img {
+    width: 30px;
+    height: 30px;
+  }
+  /* Cuando esté “expanded” (abierto), muestra la navbar full-screen */
+  .navbar.expanded {
+    display: flex !important;
+    width: 400px !important;
+    height: 100vh !important;
+    background-color: #d4edfc;
+  }
+
+  .navbar:not(.expanded)  {
+    display: none;
+  }
+}
+
+/* 1) Keyframes más elaborados */
+@keyframes highlightEnter {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px) scale(0.8);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(4px) scale(1.05);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+  
+  /* 2) Aplicarlo al highlight */
+  .highlight {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    background: white;
+    border-radius: 23px 0 0 23px;
+    left: 0;
+    top: 0;
+  
+    /* Animación: 
+       - dura 0.5s
+       - función 'ease-out' para ese rebote suave
+       - delay de 0.3s (ajústalo a 0.7s si lo prefieres)
+       - forwards para mantener el estado final */
+    opacity: 0;
+    animation: highlightEnter 0.6s ease-out 0s forwards;
+  
+    /* Sigue animando el top cuando cambie */
+    transition: top 0.3s ease;
+    z-index: 1;
+  }
+  
+  /* Pseudo-elementos idénticos a antes */
+  .highlight::before,
+  .highlight::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background: transparent;
+  }
+  .highlight::before {
+    bottom: 100%;
+    border-bottom-right-radius: 40px;
+    box-shadow: 5px 5px 0 2px #ffffff;
+  }
+  .highlight::after {
+    top: 100%;
+    border-top-right-radius: 40px;
+    box-shadow: 5px -5px 0 2px #ffffff;
+  }
+  
