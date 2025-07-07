@@ -7,7 +7,7 @@
   top: 0;
   height: 100vh;
   width: 46px; /* Navbar colapsado */
-  background-color: #d4edfc;
+  background-color: #69247C;
   padding-top: 20px;
   display: flex;
   flex-direction: column;
@@ -64,7 +64,7 @@
   width: 80%;
   padding: 12px 0;
   text-decoration: none;
-  color: #3f6db4;
+  color: #FAC67A;
   transition: background 0s ease-in-out;
   border-radius: 10px;
 }
@@ -134,7 +134,7 @@
    BOTÓN DE CIERRE (X)
    ============================== */
 .closeBtn {
-  background-color: #c8e4fc;
+  background-color: #DA498D;
   border: none;
   color: black;
 
@@ -144,14 +144,14 @@
   position: absolute;
   cursor: pointer;
   margin-left: 80%;
-  margin-top: -5%;
+  margin-top: 10%;
   transition: background 0.3s ease-in-out;
   align-items: center;
   justify-content: center;
   display: flex;
 }
 .closeBtn:hover {
-  background-color: #9bc0e0;
+  background-color: #b43c74;;
 }
 
 /* ==============================
@@ -270,7 +270,7 @@
 
 /* Borde opcional en el hover de los enlaces principales */
 .navbar.expanded a:hover {
-  outline: 1px solid #3f6db4;
+  outline: 1px solid #fff;
 }
 
 /* ==============================
@@ -283,21 +283,6 @@
 }
 
 /* .dropi: botón de "Catalog" con estilos iguales a .navbar a */
-.dropi {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
-  padding: 12px 0;
-  text-decoration: none;
-  color: #3f6db4;
-  border-radius: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  margin-left: 0; /* Sin margen en estado colapsado */
-}
 
 /* En estado expandido, se alinea a la izquierda */
 .navbar.expanded .dropi {
@@ -308,7 +293,7 @@
 
 /* Hover para "Catalog" en expandido */
 .navbar.expanded .dropi:hover {
-  outline: 1px solid #3f6db4;
+  outline: 1px solid #DA498D;
 }
 
 /* Ajusta el espaciado del ícono en "Catalog" */
@@ -372,7 +357,7 @@
 
 /* Solo los NO activos son azules */
 .submenu li a:not(.activeSubmenu) {
-  color: #3f6db4;
+  color: #DA498D;
 }
 
 /* Activos son fondo negro, texto blanco */
@@ -462,7 +447,7 @@
   height: 40px;
   border: none;
   border-radius: 15px;
-  background: #c2e0f7;
+  background: #DA498D;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -473,7 +458,7 @@
 }
 
 .collapseToggleButton:hover {
-  background-color: #9bc0e0;
+  background-color: #b43c74;
 }
 
 .arrowIcon {
