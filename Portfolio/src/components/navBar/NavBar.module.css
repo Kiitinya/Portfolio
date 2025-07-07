@@ -271,6 +271,7 @@
 /* Borde opcional en el hover de los enlaces principales */
 .navbar.expanded a:hover {
   outline: 1px solid #fff;
+  color:#fff;
 }
 
 /* ==============================

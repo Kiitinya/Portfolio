@@ -9,7 +9,7 @@ function App() {
       <NavBar />
       <div style={{ marginLeft: "80px", padding: "1rem" }}>
         <Routes>
-          <Route path="/search" element={<Home />} />
+          <Route path="/home" element={<Home />} />
  
           {/* Agrega más rutas según las vayas necesitando */}
         </Routes>
