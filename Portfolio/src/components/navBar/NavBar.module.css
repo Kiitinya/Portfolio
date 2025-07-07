@@ -13,30 +13,13 @@
   flex-direction: column;
   align-items: center;
   /* transition: width 0.3s ease-in-out; */
-  transition: background-color 0.3s ease, color 0.3s ease;
-
-  overflow: hidden;
-  z-index: 0;
-  border-radius: 0 20px 20px 0;
-}
-
-.navbar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 46px; /* Navbar colapsado */
-
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* transition: background-color 0.3s ease, color 0.3s ease; */
   transition: width 0.3s ease;
   overflow: hidden;
   z-index: 6;
-
-  /* 🎨 Parte curva blanca */
+  border-radius: 0 20px 20px 0;
 }
+
 
 .navbar.expanded::-webkit-scrollbar {
   display: none; /* Oculta la barra de scroll en Chrome y Safari */

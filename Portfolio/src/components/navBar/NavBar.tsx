@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import styles from "./css/NavBar.module.css";
+import styles from "./NavBar.module.css";
 
-import prodensa from "../../assets/login/prodensaLogo.png";
-import navBar from "../../assets/NavBar/NavBar.png";
-import right from "../../assets/components/Right.svg";
-import left from "../../assets/components/Left.svg";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
+
+
+
 import { useRef } from "react";
-import hamburgerIcon from "../../assets/NavBar/hamburguer.svg"
+
 
 const NavBar: React.FC = () => {
 	const location = useLocation();
-	const state = useSelector((state: RootState) => state);
+
 	const [isExpanded, setIsExpanded] = useState<boolean>(false);
 	const [isClosing, setIsClosing] = useState<boolean>(false);
 	const [isCatalogOpen, setIsCatalogOpen] = useState<boolean>(false);
@@ -107,19 +104,19 @@ const NavBar: React.FC = () => {
 					className={styles.mobileHamburger}
 					onClick={handleToggle}
 				>
-					<img src={hamburgerIcon} alt="Menú" />
+					{/* <img src={hamburgerIcon} alt="Menú" /> */}
 				</button>
 			)}
 
 			<nav className={`${styles.navbar} ${isExpanded ? styles.expanded : isClosing ? styles.closing : styles.collapsed}`}>
 				<div className={styles.navBarHeader}>
 					<button className={styles.toggleBtn} onClick={handleToggle}>
-						<img src={isExpanded ? prodensa : navBar} alt="Toggle Menu" />
+						{/* <img src={isExpanded ? prodensa : navBar} alt="Toggle Menu" /> */}
 					</button>
 
 					{isExpanded && (
 						<button className={styles.closeBtn} onClick={handleToggle}>
-							<img src={left} alt="Collapse menu" className={styles.arrowIcon} />
+							{/* <img src={left} alt="Collapse menu" className={styles.arrowIcon} /> */}
 						</button>
 					)}
 				</div>
@@ -136,7 +133,7 @@ const NavBar: React.FC = () => {
 							className={styles.collapseToggleButton}
 							onClick={handleToggle}
 						>
-							<img src={right} alt="Expand menu" className={styles.arrowIcon} />
+							{/* <img src={right} alt="Expand menu" className={styles.arrowIcon} /> */}
 						</button>
 					)}
 
