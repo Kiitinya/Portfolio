@@ -3,6 +3,7 @@ import profileImage from '../assets/ashley.jpg'
 
 function Home() {
   return (
+    <div className="hero-wrapper">
     <div className="hero-container">
       <img src={profileImage} alt="Ashley" className="profile-image" />
       <h1 className="hero-title">Welcome to Ashley's Portfolio</h1>
@@ -12,6 +13,7 @@ function Home() {
         <a href="#projects" className="btn">View Projects</a>
         <a href="https://linktr.ee/kiitinya" className="btn btn-secondary">Contact Me</a>
       </div>
+    </div>
     </div>
   )
 }
