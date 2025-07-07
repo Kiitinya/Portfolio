@@ -599,7 +599,7 @@
     display: flex !important;
     width: 400px !important;
     height: 100vh !important;
-    background-color: #d4edfc;
+    background-color: #000;
   }
 
   .navbar:not(.expanded)  {
