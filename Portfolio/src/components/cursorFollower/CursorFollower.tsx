@@ -24,14 +24,32 @@ const CursorFollower: React.FC = () => {
       requestAnimationFrame(updatePosition);
     };
 
+    // función para crear una chispa en (x, y)
+    const spawnSparkle = (x: number, y: number, scale: number) => {
+      const sparkle = document.createElement("div");
+      sparkle.className = "sparkle";
+      sparkle.style.top = `${y + (Math.random() - 0.5) * 30}px`;
+      sparkle.style.left = `${x + (Math.random() - 0.5) * 30}px`;
+      sparkle.style.opacity = scale.toString();
+      sparkle.style.width = sparkle.style.height = `${scale * 10}px`;
+      document.body.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 600);
+    };
+
     const handleMouseMove = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
+
+      // lanzamos 3 chispas con un pequeño delay para que vengan un poco "detrás"
+      [1, 0.8, 0.6].forEach((scale, i) => {
+        const x = e.clientX;
+        const y = e.clientY;
+        setTimeout(() => spawnSparkle(x, y, scale), i * 50);
+      });
     };
 
     document.addEventListener("mousemove", handleMouseMove);
     updatePosition();
-
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
     };
