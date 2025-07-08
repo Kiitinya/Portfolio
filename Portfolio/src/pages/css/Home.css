@@ -11,7 +11,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
+  min-height: 75vh;
   text-align: center;
   padding: 2rem;
   background: linear-gradient(145deg, #69247C, #1f002f);
@@ -128,13 +128,12 @@ body {
 
 .home-layout {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start;  /* fuerza que todos los items queden “pegados” arriba */
   gap: 2rem;
-
-  flex-wrap: wrap; /* para que sea responsive */
+  flex-wrap: wrap;
 }
+
 
 
 
