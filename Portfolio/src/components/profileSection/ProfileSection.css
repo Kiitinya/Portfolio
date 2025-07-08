@@ -1,0 +1,81 @@
+.profile-container {
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 3rem;
+  border-radius: 25px;
+  text-align: center;
+  margin: 3rem auto;
+  width: 90%;
+  max-width: 20%;
+  border: 2px solid #FAC67A;
+  box-shadow: 0 0 20px rgba(250, 198, 122, 0.2);
+   min-height: 500px;
+}
+
+.profile-title {
+  font-size: 2.5rem;
+  color: #FAC67A;
+  margin-bottom: 2rem;
+}
+
+.profile-image-large {
+  width: 150px;
+  margin-bottom: 2rem;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.skills-section h3 {
+  font-size: 1.5rem;
+  color: #DA498D;
+  margin-bottom: 1rem;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.skills-list li {
+  background-color: #69247C;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  color: white;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.skills-list li:hover {
+  background-color: #b43c74;
+}
+
+
+
+
+
+.profile-container {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.profile-container.delay-1 {
+  animation-delay: 0.2s;
+}
+.profile-container.delay-2 {
+  animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

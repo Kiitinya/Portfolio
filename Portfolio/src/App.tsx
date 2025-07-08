@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "./components/navBar/NavBar";
 import Home from "./pages/Home";
 
@@ -10,8 +10,7 @@ function App() {
       <div style={{ marginLeft: "80px", padding: "1rem" }}>
         <Routes>
           <Route path="/home" element={<Home />} />
- 
-          {/* Agrega más rutas según las vayas necesitando */}
+          <Route path="/" element={<Navigate to="/home" replace />} />
         </Routes>
       </div>
     </>

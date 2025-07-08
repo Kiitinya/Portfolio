@@ -1,0 +1,40 @@
+.cursor-core {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 15px #fac67a, 0 0 40px #fff, 0 0 60px #fac67a;
+  mix-blend-mode: screen;
+}
+
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(250, 198, 122, 0.2), transparent 70%);
+  pointer-events: none;
+  z-index: 9998;
+  animation: rotateGlow 3s linear infinite;
+  mix-blend-mode: screen;
+  filter: blur(4px);
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
