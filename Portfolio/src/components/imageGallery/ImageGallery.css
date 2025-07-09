@@ -4,14 +4,23 @@
   border-radius: 20px;
   padding: 2rem;
 
-  margin: 1.5rem;
+  margin: 1.8rem;
   margin-top: 2.5rem;
   margin-bottom: 0;
 
 
-  width: 90%;
+  width: 89%;
   text-align: center;
   box-shadow: 0 0 20px rgba(250, 198, 122, 0.2);
+
+   opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.8s ease-out forwards;
+
+  transform-origin: center center;
+  transition:
+    transform 0.5s ease-in-out,
+    box-shadow 0.5s ease-in-out;
 }
 
 
@@ -38,13 +47,26 @@
   transition: transform 0.3s ease;
 }
 
-.image-gallery-img:hover {
-  transform: scale(1.05);
+.image-gallery:hover {
+   transform: scale(1.04) !important;
+  box-shadow: 0 0 30px rgba(250, 198, 122, 0.3);
 }
 
 @media (max-width: 768px) {
   .image-gallery {
     max-width: 100%;
 
+  }
+}
+
+
+.delay-3 {
+  animation-delay: 2.0s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

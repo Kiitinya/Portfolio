@@ -43,6 +43,7 @@ function Home() {
    <ImageGallery
   title="Mis Proyectos"
   images={[reactLogo]}
+  className="delay-3"
 />
   </div>
     </div>
