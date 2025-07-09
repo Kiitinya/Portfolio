@@ -128,10 +128,10 @@ body {
 
 .home-layout {
   display: flex;
-  justify-content: center;
+   justify-content: flex-start;
   align-items: flex-start;  /* fuerza que todos los items queden “pegados” arriba */
-  gap: 2rem;
-  flex-wrap: wrap;
+
+
 }
 
 
@@ -141,3 +141,51 @@ body {
   flex: 1;
   min-width: 300px;
 }
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 16px;
+
+}
+
+
+
+.home-layout {
+  display: flex;
+  align-items: stretch; /* 👈 Esto hará que ambos hijos tengan la misma altura */
+  justify-content: center; /* Centra si hay espacio extra */
+  gap: 2rem; /* Espacio entre los dos bloques */
+}
+
+
+@media (max-width: 1750px) {
+  .home-layout {
+    flex-direction: column;
+    align-items: center; /* Centra ambos bloques horizontalmente */
+  }
+
+  .hero-wrapper,
+  .profiles-wrapper {
+    width: 90%; /* Ocupan casi todo el ancho en móvil */
+    max-width: 600px;
+    margin: 1rem 0;
+  }
+
+  .profile-container {
+    max-width: 100%;
+    min-height: auto; /* Permite altura automática en móvil */
+  }
+}
+
+
+
+
+

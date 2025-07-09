@@ -1,0 +1,35 @@
+.image-gallery {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 2px solid #FAC67A;
+  border-radius: 20px;
+  padding-bottom: 2rem;
+  margin: 0rem auto;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(250, 198, 122, 0.2);
+}
+
+.image-gallery-title {
+  font-size: 2rem;
+  color: #FAC67A;
+  margin-bottom: 1.5rem;
+}
+
+.image-gallery-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.image-gallery-img {
+
+  object-fit: cover;
+  border-radius: 10px;
+
+  transition: transform 0.3s ease;
+}
+
+.image-gallery-img:hover {
+  transform: scale(1.05);
+}
