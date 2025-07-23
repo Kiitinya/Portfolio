@@ -5,6 +5,16 @@ import reactLogo from '../assets/react.svg'
 import unityLogo from '../assets/Unity.png'
 import CursorFollower from "../components/cursorFollower/CursorFollower"
 import ImageGallery from '../components/imageGallery/ImageGallery'
+import GitHubLogo from '../assets/GitHub.png'
+import JavaLogo from '../assets/Java.webp'
+import CLogo from '../assets/C.svg'
+import RLogo from '../assets/r.webp'
+import SQLLogo from '../assets/SQL.png'
+import CNLogo from '../assets/C1.svg'
+import HTMLLogo from '../assets/HTML.svg'
+import CSSLogo from '../assets/CSS.svg'
+import JSLogo from '../assets/js.png'
+
 
 function Home() {
   return (
@@ -23,29 +33,40 @@ function Home() {
         <CursorFollower />
 
       </div>
-       <div className="profiles-wrapper">
+      <div className="profiles-wrapper">
         <div className="profile-sections">
-      <ProfileSection
-        title="Web Developer"
-        imageSrc={reactLogo}
-        imageAlt="React Logo"
-        skills={['React', 'TypeScript', 'Node.js', 'Redux', 'CSS Modules', 'SQL']}
-        extraClassName="delay-1"
-      />
-      <ProfileSection
-        title="Game Developer"
-        imageSrc={unityLogo}
-        imageAlt="React Logo"
-        skills={['Unity', 'C#', 'Physics & Collisions', 'ScriptableObjects', 'Localization']}
-        extraClassName="delay-2"
-      />
-  </div>
-   <ImageGallery
-  title="Mis Proyectos"
-  images={[reactLogo]}
-  className="delay-3"
-/>
-  </div>
+          <ProfileSection
+            title="Web Developer"
+            imageSrc={reactLogo}
+            imageAlt="React Logo"
+            skills={['React', 'TypeScript', 'Node.js', 'Redux', 'CSS Modules', 'SQL']}
+            extraClassName="delay-1"
+          />
+          <ProfileSection
+            title="Game Developer"
+            imageSrc={unityLogo}
+            imageAlt="React Logo"
+            skills={['Unity', 'C#', 'Physics & Collisions', 'ScriptableObjects', 'Localization']}
+            extraClassName="delay-2"
+          />
+        </div>
+        <ImageGallery
+          title="My skills"
+
+          images={[{ src: reactLogo },
+          { src: HTMLLogo, alt: 'HTML' },
+          { src: CSSLogo, alt: 'CSS' },
+          { src: JSLogo, alt: 'JS' },
+          { src: SQLLogo, alt: 'SQL' },
+          { src: GitHubLogo, alt: 'GitHub' },
+          { src: CLogo, alt: 'C#' },
+          { src: unityLogo, alt: 'Unity' },
+          { src: RLogo, alt: 'R' },
+          { src: JavaLogo, alt: 'Java' },
+          ]}
+          className="delay-3"
+        />
+      </div>
     </div>
 
   )

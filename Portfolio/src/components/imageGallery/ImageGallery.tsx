@@ -16,6 +16,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ title, images, className = 
             key={index}
             src={img.src}
             alt={img.alt || `Image ${index + 1}`}
+            data-tooltip={img.alt}
             className="image-gallery-img"
           />
         ))}
